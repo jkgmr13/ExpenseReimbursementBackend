@@ -9373,3 +9373,218 @@ exceptions.resource_error.ResourceNotFoundError: No login with the id jkgmrjkgm 
 2021-06-21 09:54:26,173 INFO 127.0.0.1 - - [21/Jun/2021 09:54:26] "POST /login HTTP/1.1" 200 -
 2021-06-21 09:54:26,270 INFO 127.0.0.1 - - [21/Jun/2021 09:54:26] "GET /reimbursements HTTP/1.1" 200 -
 2021-06-21 09:54:26,354 INFO 127.0.0.1 - - [21/Jun/2021 09:54:26] "GET /reimbursements HTTP/1.1" 200 -
+2021-07-26 10:30:30,079 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-07-26 12:08:59,500 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-07-26 12:10:32,880 INFO 127.0.0.1 - - [26/Jul/2021 12:10:32] "OPTIONS /login HTTP/1.1" 200 -
+2021-07-26 12:10:33,374 INFO 127.0.0.1 - - [26/Jul/2021 12:10:33] "POST /login HTTP/1.1" 200 -
+2021-07-26 12:11:21,807 INFO 127.0.0.1 - - [26/Jul/2021 12:11:21] "OPTIONS /login HTTP/1.1" 200 -
+2021-07-26 12:11:22,258 INFO 127.0.0.1 - - [26/Jul/2021 12:11:22] "POST /login HTTP/1.1" 200 -
+2021-07-26 12:11:33,540 INFO 127.0.0.1 - - [26/Jul/2021 12:11:33] "GET /employees/1/reimbursements HTTP/1.1" 200 -
+2021-07-26 12:12:35,657 INFO 127.0.0.1 - - [26/Jul/2021 12:12:35] "OPTIONS /login HTTP/1.1" 200 -
+2021-07-26 12:12:36,056 INFO 127.0.0.1 - - [26/Jul/2021 12:12:36] "POST /login HTTP/1.1" 200 -
+2021-07-26 12:12:40,171 INFO 127.0.0.1 - - [26/Jul/2021 12:12:40] "GET /employees/1/reimbursements HTTP/1.1" 200 -
+2021-07-26 12:12:46,023 INFO 127.0.0.1 - - [26/Jul/2021 12:12:46] "OPTIONS /reimbursements HTTP/1.1" 200 -
+2021-07-26 12:12:46,423 ERROR Exception on /reimbursements [POST]
+Traceback (most recent call last):
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\main.py", line 114, in create_reimbursement
+    reimbursement = service.create_reimbursement(Reimbursement(*body.values()))
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\services\services_impl.py", line 50, in create_reimbursement
+    return self.reimbursement_dao.create_reimbursement(reimbursement)
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\daos\reimbursement_dao_post.py", line 11, in create_reimbursement
+    cursor.execute(sql, (reimbursement.employee_id, reimbursement.amount, reimbursement.status, reimbursement.reason))
+psycopg2.errors.InvalidTextRepresentation: invalid input syntax for type double precision: "asdf"
+LINE 1: insert into reimbursement values(default, '1', 'asdf', 'pend...
+                                                       ^
+
+2021-07-26 12:12:46,428 INFO 127.0.0.1 - - [26/Jul/2021 12:12:46] "[35m[1mPOST /reimbursements HTTP/1.1[0m" 500 -
+2021-07-26 12:12:51,047 ERROR Exception on /reimbursements [POST]
+Traceback (most recent call last):
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\main.py", line 114, in create_reimbursement
+    reimbursement = service.create_reimbursement(Reimbursement(*body.values()))
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\services\services_impl.py", line 46, in create_reimbursement
+    if self.employee_dao.get_employee(reimbursement.employee_id).role_id == 1:
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\daos\employee_dao_post.py", line 20, in get_employee
+    cursor.execute(sql, [employee_id])
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+2021-07-26 12:12:51,048 INFO 127.0.0.1 - - [26/Jul/2021 12:12:51] "[35m[1mPOST /reimbursements HTTP/1.1[0m" 500 -
+2021-07-26 12:13:06,947 INFO 127.0.0.1 - - [26/Jul/2021 12:13:06] "OPTIONS /reimbursements HTTP/1.1" 200 -
+2021-07-26 12:13:07,271 ERROR Exception on /reimbursements [POST]
+Traceback (most recent call last):
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\main.py", line 114, in create_reimbursement
+    reimbursement = service.create_reimbursement(Reimbursement(*body.values()))
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\services\services_impl.py", line 46, in create_reimbursement
+    if self.employee_dao.get_employee(reimbursement.employee_id).role_id == 1:
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\daos\employee_dao_post.py", line 20, in get_employee
+    cursor.execute(sql, [employee_id])
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+2021-07-26 12:13:07,272 INFO 127.0.0.1 - - [26/Jul/2021 12:13:07] "[35m[1mPOST /reimbursements HTTP/1.1[0m" 500 -
+2021-07-26 12:14:23,660 INFO 127.0.0.1 - - [26/Jul/2021 12:14:23] "OPTIONS /reimbursements HTTP/1.1" 200 -
+2021-07-26 12:14:23,985 ERROR Exception on /reimbursements [POST]
+Traceback (most recent call last):
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\main.py", line 114, in create_reimbursement
+    reimbursement = service.create_reimbursement(Reimbursement(*body.values()))
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\services\services_impl.py", line 46, in create_reimbursement
+    if self.employee_dao.get_employee(reimbursement.employee_id).role_id == 1:
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\daos\employee_dao_post.py", line 20, in get_employee
+    cursor.execute(sql, [employee_id])
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+2021-07-26 12:14:23,986 INFO 127.0.0.1 - - [26/Jul/2021 12:14:23] "[35m[1mPOST /reimbursements HTTP/1.1[0m" 500 -
+2021-07-26 12:17:03,765 ERROR Exception on /employees/1/reimbursements [GET]
+Traceback (most recent call last):
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\main.py", line 66, in get_all_employee_reimbursements
+    reimbursements = service.get_all_employee_reimbursements(int(employee_id))
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\services\services_impl.py", line 37, in get_all_employee_reimbursements
+    reimbursements = self.reimbursement_dao.get_all_reimbursements()
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\daos\reimbursement_dao_post.py", line 29, in get_all_reimbursements
+    cursor.execute(sql)
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+2021-07-26 12:17:03,766 INFO 127.0.0.1 - - [26/Jul/2021 12:17:03] "[35m[1mGET /employees/1/reimbursements HTTP/1.1[0m" 500 -
+2021-07-26 12:17:05,989 ERROR Exception on /employees/1/reimbursements [GET]
+Traceback (most recent call last):
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\main.py", line 66, in get_all_employee_reimbursements
+    reimbursements = service.get_all_employee_reimbursements(int(employee_id))
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\services\services_impl.py", line 37, in get_all_employee_reimbursements
+    reimbursements = self.reimbursement_dao.get_all_reimbursements()
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\daos\reimbursement_dao_post.py", line 29, in get_all_reimbursements
+    cursor.execute(sql)
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+2021-07-26 12:17:05,990 INFO 127.0.0.1 - - [26/Jul/2021 12:17:05] "[35m[1mGET /employees/1/reimbursements HTTP/1.1[0m" 500 -
+2021-07-26 12:17:14,645 INFO 127.0.0.1 - - [26/Jul/2021 12:17:14] "OPTIONS /login HTTP/1.1" 200 -
+2021-07-26 12:17:14,897 INFO 127.0.0.1 - - [26/Jul/2021 12:17:14] "OPTIONS /login HTTP/1.1" 200 -
+2021-07-26 12:17:15,001 ERROR Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\main.py", line 43, in check_login
+    employee = service.login(login)
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\services\services_impl.py", line 59, in login
+    login_check = self.login_dao.get_login_by_user_name(login.user_name)
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\daos\login_dao_post.py", line 30, in get_login_by_user_name
+    cursor.execute(sql, [user_name])
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+2021-07-26 12:17:15,002 INFO 127.0.0.1 - - [26/Jul/2021 12:17:15] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2021-07-26 12:17:15,075 ERROR Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\jkgmr13\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\main.py", line 43, in check_login
+    employee = service.login(login)
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\services\services_impl.py", line 59, in login
+    login_check = self.login_dao.get_login_by_user_name(login.user_name)
+  File "C:\Users\jkgmr13\Desktop\git\ExpenseReimbursementBackend\daos\login_dao_post.py", line 30, in get_login_by_user_name
+    cursor.execute(sql, [user_name])
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+2021-07-26 12:17:15,076 INFO 127.0.0.1 - - [26/Jul/2021 12:17:15] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2021-07-26 12:17:28,082 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-07-26 12:17:37,695 INFO 127.0.0.1 - - [26/Jul/2021 12:17:37] "OPTIONS /login HTTP/1.1" 200 -
+2021-07-26 12:17:38,173 INFO 127.0.0.1 - - [26/Jul/2021 12:17:38] "POST /login HTTP/1.1" 200 -
+2021-07-26 12:17:50,540 INFO 127.0.0.1 - - [26/Jul/2021 12:17:50] "OPTIONS /login HTTP/1.1" 200 -
+2021-07-26 12:17:50,995 INFO 127.0.0.1 - - [26/Jul/2021 12:17:50] "POST /login HTTP/1.1" 200 -
+2021-07-26 12:17:52,761 INFO 127.0.0.1 - - [26/Jul/2021 12:17:52] "GET /reimbursements HTTP/1.1" 200 -
+2021-07-26 12:17:55,520 INFO 127.0.0.1 - - [26/Jul/2021 12:17:55] "GET /employees HTTP/1.1" 200 -
+2021-07-26 12:17:55,780 INFO 127.0.0.1 - - [26/Jul/2021 12:17:55] "GET /reimbursements HTTP/1.1" 200 -
+2021-07-26 12:17:58,377 INFO 127.0.0.1 - - [26/Jul/2021 12:17:58] "GET /reimbursements HTTP/1.1" 200 -
+2021-07-26 12:18:18,216 INFO 127.0.0.1 - - [26/Jul/2021 12:18:18] "OPTIONS /login HTTP/1.1" 200 -
+2021-07-26 12:18:18,619 INFO 127.0.0.1 - - [26/Jul/2021 12:18:18] "POST /login HTTP/1.1" 200 -
+2021-07-26 12:18:28,572 INFO 127.0.0.1 - - [26/Jul/2021 12:18:28] "OPTIONS /reimbursements HTTP/1.1" 200 -
+2021-07-26 12:18:29,109 INFO 127.0.0.1 - - [26/Jul/2021 12:18:29] "[35m[1mPOST /reimbursements HTTP/1.1[0m" 201 -
+2021-07-26 12:18:30,819 INFO 127.0.0.1 - - [26/Jul/2021 12:18:30] "GET /employees/5/reimbursements HTTP/1.1" 200 -
