@@ -1,0 +1,3 @@
+
+class AbuseOfPowerError(Exception):
+    pass
