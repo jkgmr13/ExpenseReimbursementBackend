@@ -41,5 +41,5 @@ def test_delete_invalid():
     try:
         employee_dao.delete_employee(9999)
         assert False
-    except ResourceNotFoundError as e:
+    except ResourceNotFoundError:
         assert True

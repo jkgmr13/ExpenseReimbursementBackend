@@ -51,7 +51,7 @@ def test_get_all_logins():
 def test_update_login():
     global test_employee_id
     login1 = login_dao.get_login_by_id(test_employee_id)
-    login1.user_name == "jack"
+    login1.user_name = "jack"
     login2 = login_dao.update_login(login1)
     assert login1.user_name == login2.user_name
 
